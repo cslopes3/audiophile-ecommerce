@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import { Manrope } from 'next/font/google';
-import './globals.css';
 
-const manrope = Manrope({ subsets: ['latin'] });
+import './globals.css';
+import { manrope } from '@public/styles/fonts';
 
 export const metadata: Metadata = {
     title: 'Audiophile Ecommerce',
