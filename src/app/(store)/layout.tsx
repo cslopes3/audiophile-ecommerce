@@ -4,9 +4,9 @@ import { ReactNode } from 'react';
 import { MenuLinks } from 'components/menu-links';
 import { SocialLinks } from 'components/social-links';
 
-import iconCart from '@public/shared/icon-cart.svg';
-import iconHamburger from '@public/shared/icon-hamburger.svg';
-import logo from '@public/shared/logo.svg';
+import iconCart from '@public/shared/svg/icon-cart.svg';
+import iconHamburger from '@public/shared/svg/icon-hamburger.svg';
+import logo from '@public/shared/svg/logo.svg';
 
 export default function StoreLayout({ children }: { children: ReactNode }) {
     return (

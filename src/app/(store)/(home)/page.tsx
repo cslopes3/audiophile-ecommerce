@@ -1,7 +1,7 @@
 import { About } from 'components/about';
 import { Button } from 'components/button';
 import { CirclesPattern } from 'components/circles-pattern';
-import { ProductList } from 'components/product-list';
+import { CategoryList } from 'components/category-list';
 
 export default function Home() {
     return (
@@ -38,17 +38,17 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <ProductList />
+            <CategoryList />
             <section className="w-9/10 mx-auto flex items-center flex-col justify-center mt-28 gap-6 md:gap-8 lg:w-4/5 lg:mt-40 lg:gap-12">
                 <div className="relative flex items-center flex-col justify-center text-title-alt pb-14 w-full bg-primary-default rounded-lg overflow-hidden lg:flex-row lg:justify-evenly">
                     <picture className="z-10">
                         <source
                             media="(min-width:1024px)"
-                            srcSet="/desktop/home/image-speaker-zx9.png"
+                            srcSet="/desktop/home/no-background/image-speaker-zx9.png"
                         />
                         <img
                             className="pt-14 w-40 md:w-44 lg:w-[22.5rem] lg:relative lg:-bottom-[4.250rem]"
-                            src="/shared/image-speaker-zx9.png"
+                            src="/shared/no-background/image-speaker-zx9.png"
                         />
                     </picture>
                     <CirclesPattern />

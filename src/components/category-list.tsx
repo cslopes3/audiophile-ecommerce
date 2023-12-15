@@ -3,20 +3,20 @@ import Link from 'next/link';
 
 import { ProductImage } from './produt-image';
 
-import earphoneImage from '@public/shared/earphones-no-background.png';
-import headphoneImage from '@public/shared/headphones-no-background.png';
-import arrow from '@public/shared/icon-arrow-right.svg';
-import speakersImage from '@public/shared/speakers-no-background.png';
+import earphoneImage from '@public/shared/no-background/earphones-no-background.png';
+import headphoneImage from '@public/shared/no-background/headphones-no-background.png';
+import speakersImage from '@public/shared/no-background/speakers-no-background.png';
+import arrow from '@public/shared/svg/icon-arrow-right.svg';
 
-interface ProductType {
+interface CategoryType {
     id: string;
     name: string;
     image: StaticImageData;
     variant: 'headphone' | 'speaker' | 'earphone';
 }
 
-export function ProductList() {
-    const products: ProductType[] = [
+export function CategoryList() {
+    const products: CategoryType[] = [
         {
             id: '1',
             name: 'Headphones',
