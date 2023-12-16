@@ -1,7 +1,7 @@
 import { About } from 'components/about';
 import { Button } from 'components/button';
-import { CirclesPattern } from 'components/circles-pattern';
 import { CategoryList } from 'components/category-list';
+import { CirclesPattern } from 'components/circles-pattern';
 
 export default function Home() {
     return (
