@@ -2,7 +2,7 @@ import { Button } from 'components/button';
 
 interface Product {
     name: string;
-    text: string;
+    description: string;
     newProduct: boolean;
     mobileImageUrl: string;
     tabletImageUrl: string;
@@ -43,7 +43,7 @@ export function ProductCard(props: Product) {
                     {props.name}
                 </h2>
                 <p className="w-80 text-body text-paragraph opacity-50 mx-auto md:mt-4 md:w-4/5 lg:mx-0">
-                    {props.text}
+                    {props.description}
                 </p>
                 <div className="text-title-alt mx-auto md:mt-2 lg:mx-0 lg:mt-6">
                     <Button>See Product</Button>
