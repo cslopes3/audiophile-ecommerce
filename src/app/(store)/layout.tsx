@@ -1,36 +1,40 @@
 import Image from 'next/image';
 import { ReactNode } from 'react';
 
+import { CategoryList } from 'components/category-list';
+import { HamburguerButtonMenu } from 'components/hamburguer-button-menu';
 import { MenuLinks } from 'components/menu-links';
+import { SmallDevicesMenu } from 'components/small-devices-menu';
 import { SocialLinks } from 'components/social-links';
 
 import iconCart from '@public/shared/svg/icon-cart.svg';
-import iconHamburger from '@public/shared/svg/icon-hamburger.svg';
 import logo from '@public/shared/svg/logo.svg';
+import { SmallDeviceProvider } from 'context/small-devices-menu-context';
 
 export default function StoreLayout({ children }: { children: ReactNode }) {
     return (
         <>
-            <header className="bg-header mx-auto max-w-desktop z-10 relative">
-                <div className="flex items-center justify-center w-9/10 mx-auto py-8 lg:w-4/5 lg:justify-between">
-                    <Image
-                        className="w-5 h-4 lg:hidden"
-                        src={iconHamburger}
-                        alt=""
-                    />
-                    <div className="flex justify-center items-center flex-grow md:flex-grow-0 md:ml-10 lg:ml-0">
-                        <Image className="w-36 h-6" src={logo} alt="" />
+            <header className="bg-header mx-auto max-w-desktop z-50 relative">
+                <SmallDeviceProvider>
+                    <div className="flex items-center justify-center w-9/10 mx-auto py-8 lg:w-4/5 lg:justify-between">
+                        <HamburguerButtonMenu />
+                        <div className="flex justify-center items-center flex-grow md:flex-grow-0 md:ml-10 lg:ml-0">
+                            <Image className="w-36 h-6" src={logo} alt="" />
+                        </div>
+                        <nav className="hidden lg:block">
+                            <MenuLinks />
+                        </nav>
+                        <Image
+                            className="w-6 h-6 md:ml-auto lg:mx-0"
+                            src={iconCart}
+                            alt=""
+                        />
                     </div>
-                    <div className="hidden lg:block">
-                        <MenuLinks />
-                    </div>
-                    <Image
-                        className="w-6 h-6 md:ml-auto lg:mx-0"
-                        src={iconCart}
-                        alt=""
-                    />
-                </div>
-                <div className="h-1 bg-header border-b border-white border-opacity-10 md:w-9/10 md:mx-auto lg:w-4/5"></div>
+                    <div className="h-1 bg-header border-b border-white border-opacity-10 md:w-9/10 md:mx-auto lg:w-4/5"></div>
+                    <SmallDevicesMenu>
+                        <CategoryList />
+                    </SmallDevicesMenu>
+                </SmallDeviceProvider>
             </header>
             <main className="mx-auto max-w-desktop">{children}</main>
             <footer className="bg-footer flex flex-col items-center gap-12 text-paragraph-alt pb-9 mx-auto max-w-desktop md:gap-8 md:pb-11">

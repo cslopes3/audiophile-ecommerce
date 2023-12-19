@@ -42,7 +42,9 @@ export default function Category({ params }: CategoryProps) {
                     );
                 })}
             </section>
-            <CategoryList />
+            <div className="w-9/10 mx-auto mt-6 md:mt-20 lg:w-4/5 lg:mt-28">
+                <CategoryList />
+            </div>
             <About />
         </>
     );

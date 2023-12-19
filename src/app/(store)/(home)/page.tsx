@@ -38,7 +38,9 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <CategoryList />
+            <div className="w-9/10 mx-auto mt-6 md:mt-20 lg:w-4/5 lg:mt-28">
+                <CategoryList />
+            </div>
             <section className="w-9/10 mx-auto flex items-center flex-col justify-center mt-28 gap-6 md:gap-8 lg:w-4/5 lg:mt-40 lg:gap-12">
                 <div className="relative flex items-center flex-col justify-center text-title-alt pb-14 w-full bg-primary-default rounded-lg overflow-hidden lg:flex-row lg:justify-evenly">
                     <picture className="z-10">

@@ -71,7 +71,9 @@ export default function ProductPage({ params }: ProductProps) {
                 thirdImage={product.gallery.third}
             />
             <OtherProduct others={product.others} />
-            <CategoryList isfullSize={true} />
+            <div className="w-full mt-6 md:mt-20 lg:mt-28">
+                <CategoryList />
+            </div>
             <About isfullSize={true} />
         </div>
     );

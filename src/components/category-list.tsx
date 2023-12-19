@@ -15,11 +15,7 @@ interface CategoryType {
     variant: 'headphone' | 'speaker' | 'earphone';
 }
 
-interface CategoryProps {
-    isfullSize?: boolean;
-}
-
-export function CategoryList({ isfullSize }: CategoryProps) {
+export function CategoryList() {
     const products: CategoryType[] = [
         {
             id: '1',
@@ -41,13 +37,8 @@ export function CategoryList({ isfullSize }: CategoryProps) {
         },
     ];
 
-    const width = isfullSize ? 'w-full' : 'w-9/10 lg:w-4/5';
-
     return (
-        <section
-            className={`${width} mx-auto flex flex-col items-center mt-6 
-                        md:flex-row md:mt-20 md:gap-3 lg:mt-28`}
-        >
+        <section className="mx-auto flex flex-col items-center md:flex-row md:gap-3">
             {products.map((product) => {
                 return (
                     <article
