@@ -44,7 +44,7 @@ export default function Home() {
                     <picture className="z-10">
                         <source
                             media="(min-width:1024px)"
-                            srcSet="/desktop/home/no-background/image-speaker-zx9.png"
+                            srcSet="/desktop/home/image-speaker-zx9.png"
                         />
                         <img
                             className="pt-14 w-40 md:w-44 lg:w-[22.5rem] lg:relative lg:-bottom-[4.250rem]"

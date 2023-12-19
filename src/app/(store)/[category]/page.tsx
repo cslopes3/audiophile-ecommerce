@@ -1,6 +1,6 @@
 import { About } from 'components/about';
 import { CategoryList } from 'components/category-list';
-import { ProductCard } from 'components/product-card';
+import { CategoryProductCard } from 'components/category-product-card';
 
 import { getProductFromCategory } from 'utils/get-products-from-category';
 
@@ -29,7 +29,7 @@ export default function Category({ params }: CategoryProps) {
                 {products.map((product, index) => {
                     return (
                         <div key={product.id}>
-                            <ProductCard
+                            <CategoryProductCard
                                 name={product.name}
                                 description={product.description}
                                 newProduct={product.new}

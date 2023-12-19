@@ -1,6 +1,14 @@
-export function About() {
+interface AboutProps {
+    isfullSize?: boolean;
+}
+
+export function About({ isfullSize }: AboutProps) {
+    const width = isfullSize ? 'w-full' : 'w-9/10 lg:w-4/5';
+
     return (
-        <section className="w-9/10 mx-auto my-32 flex flex-col gap-8 md:my-24 lg:w-4/5 lg:flex-row-reverse ">
+        <section
+            className={`${width} mx-auto my-32 flex flex-col gap-8 md:my-24 lg:flex-row-reverse`}
+        >
             <picture className="w-full lg:w-2/4">
                 <source
                     media="(min-width:1024px)"
