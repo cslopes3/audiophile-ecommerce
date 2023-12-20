@@ -9,6 +9,7 @@ interface OtherProductProps {
             tablet: string;
             desktop: string;
         };
+        category?: string;
     }[];
 }
 
@@ -43,7 +44,11 @@ export function OtherProduct(props: OtherProductProps) {
                                 {product.name}
                             </h3>
                             <div className="text-title-alt mx-auto">
-                                <Button>See Product</Button>
+                                <Button
+                                    url={`/${product.category}/${product.slug}`}
+                                >
+                                    See Product
+                                </Button>
                             </div>
                         </article>
                     );

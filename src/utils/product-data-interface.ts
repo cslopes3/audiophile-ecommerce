@@ -46,5 +46,6 @@ export interface ProductDataInterface {
             tablet: string;
             desktop: string;
         };
+        category?: string;
     }[];
 }

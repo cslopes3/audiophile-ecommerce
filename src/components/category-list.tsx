@@ -58,7 +58,8 @@ export function CategoryList() {
                             <div className="flex items-center pt-4">
                                 <Link
                                     className="uppercase text-sub-title text-title opacity-50 transition-all hover:text-emphasis hover:opacity-100"
-                                    href={''}
+                                    href={product.name.toLowerCase()}
+                                    replace
                                 >
                                     Shop
                                 </Link>

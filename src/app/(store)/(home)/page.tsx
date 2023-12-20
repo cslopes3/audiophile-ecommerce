@@ -33,7 +33,9 @@ export default function Home() {
                             enthusiast.
                         </p>
                         <div className="mx-auto lg:mx-0">
-                            <Button>See Product</Button>
+                            <Button url="headphones/xx99-mark-two-headphones">
+                                See Product
+                            </Button>
                         </div>
                     </div>
                 </div>
@@ -63,14 +65,18 @@ export default function Home() {
                             Upgrade to premium speakers that are phenomenally
                             built to deliver truly remarkable sound.
                         </p>
-                        <Button variant="secondary">See Product</Button>
+                        <Button variant="secondary" url="speakers/zx9-speaker">
+                            See Product
+                        </Button>
                     </div>
                 </div>
 
                 <div className="bg-speaker w-full rounded-lg bg-no-repeat bg-cover h-80 flex flex-col items-center justify-center md:bg-speaker-tablet lg:bg-speaker-desktop">
                     <div className="w-5/6 text-title md:w-4/5 lg:w-5/6">
                         <h2 className="text-h4 uppercase mb-8">ZX7 speaker</h2>
-                        <Button variant="outline">See Product</Button>
+                        <Button variant="outline" url="speakers/zx7-speaker">
+                            See Product
+                        </Button>
                     </div>
                 </div>
 
@@ -95,7 +101,12 @@ export default function Home() {
                             <h2 className="text-h4 uppercase mb-7">
                                 YX1 earphones
                             </h2>
-                            <Button variant="outline">See Product</Button>
+                            <Button
+                                variant="outline"
+                                url="earphones/yx1-earphone"
+                            >
+                                See Product
+                            </Button>
                         </div>
                     </div>
                 </div>

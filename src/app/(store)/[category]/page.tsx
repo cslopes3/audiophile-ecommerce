@@ -15,7 +15,7 @@ export default function Category({ params }: CategoryProps) {
     const products = getProductFromCategory(categoryName);
 
     //TODO
-    if (!products) {
+    if (products.length === 0) {
         return <h1>Error</h1>;
     }
 
@@ -37,6 +37,7 @@ export default function Category({ params }: CategoryProps) {
                                 tabletImageUrl={product.categoryImage.tablet}
                                 desktopImageUrl={product.categoryImage.desktop}
                                 position={index}
+                                url={`${product.category}/${product.slug}`}
                             />
                         </div>
                     );

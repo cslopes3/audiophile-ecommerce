@@ -1,3 +1,6 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import { ComponentProps } from 'react';
 
 import { manrope } from '@public/styles/fonts';
@@ -20,9 +23,28 @@ const button = tv({
     },
 });
 
-export type ButtonProps = ComponentProps<'button'> &
-    VariantProps<typeof button>;
+type ButtonType = {
+    url?: string;
+};
 
-export function Button({ variant, ...props }: ButtonProps) {
-    return <button {...props} className={button({ variant })} />;
+export type ButtonProps = ComponentProps<'button'> &
+    VariantProps<typeof button> &
+    ButtonType;
+
+export function Button({ variant, url, ...props }: ButtonProps) {
+    const router = useRouter();
+
+    return (
+        <>
+            {url ? (
+                <button
+                    {...props}
+                    className={button({ variant })}
+                    onClick={() => router.push(url)}
+                />
+            ) : (
+                <button {...props} className={button({ variant })} />
+            )}
+        </>
+    );
 }

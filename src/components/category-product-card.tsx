@@ -8,6 +8,7 @@ interface Product {
     tabletImageUrl: string;
     desktopImageUrl: string;
     position: number;
+    url: string;
 }
 
 export function CategoryProductCard(props: Product) {
@@ -47,7 +48,7 @@ export function CategoryProductCard(props: Product) {
                 </p>
 
                 <div className="text-title-alt mx-auto md:mt-2 lg:mx-0 lg:mt-6">
-                    <Button>See Product</Button>
+                    <Button url={props.url}>See Product</Button>
                 </div>
             </div>
         </div>

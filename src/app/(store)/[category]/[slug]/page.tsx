@@ -17,6 +17,7 @@ interface ProductProps {
 export default function ProductPage({ params }: ProductProps) {
     const slug = params.slug;
     const product = getProductBySlug(slug);
+
     //TODO
     if (!product || product.category != params.category) {
         return <h1>Error</h1>;
@@ -71,7 +72,7 @@ export default function ProductPage({ params }: ProductProps) {
                 thirdImage={product.gallery.third}
             />
             <OtherProduct others={product.others} />
-            <div className="w-full mt-6 md:mt-20 lg:mt-28">
+            <div className="w-full mt-28 md:mt-20 lg:mt-28">
                 <CategoryList />
             </div>
             <About isfullSize={true} />

@@ -3,12 +3,12 @@ import { ReactNode } from 'react';
 
 import { CategoryList } from 'components/category-list';
 import { HamburguerButtonMenu } from 'components/hamburguer-button-menu';
+import { Logo } from 'components/logo';
 import { MenuLinks } from 'components/menu-links';
 import { SmallDevicesMenu } from 'components/small-devices-menu';
 import { SocialLinks } from 'components/social-links';
 
 import iconCart from '@public/shared/svg/icon-cart.svg';
-import logo from '@public/shared/svg/logo.svg';
 import { SmallDeviceProvider } from 'context/small-devices-menu-context';
 
 export default function StoreLayout({ children }: { children: ReactNode }) {
@@ -19,7 +19,7 @@ export default function StoreLayout({ children }: { children: ReactNode }) {
                     <div className="flex items-center justify-center w-9/10 mx-auto py-8 lg:w-4/5 lg:justify-between">
                         <HamburguerButtonMenu />
                         <div className="flex justify-center items-center flex-grow md:flex-grow-0 md:ml-10 lg:ml-0">
-                            <Image className="w-36 h-6" src={logo} alt="" />
+                            <Logo />
                         </div>
                         <nav className="hidden lg:block">
                             <MenuLinks />
@@ -42,11 +42,9 @@ export default function StoreLayout({ children }: { children: ReactNode }) {
                     <div className="mx-auto w-28 border-b-4 border-primary-default md:mx-0"></div>
                 </div>
                 <div className="w-9/10 md:mt-6 lg:w-4/5 lg:mt-16 lg:flex lg:justify-between">
-                    <Image
-                        className="mx-auto w-36 h-6 md:mx-0"
-                        src={logo}
-                        alt=""
-                    />
+                    <div className="mx-auto md:mx-0">
+                        <Logo />
+                    </div>
                     <MenuLinks />
                 </div>
                 <div className="w-9/10 flex flex-col gap-12 text-body md:gap-20 md:flex-row md:flex-wrap lg:w-4/5">
