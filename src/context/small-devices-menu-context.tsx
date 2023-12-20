@@ -2,10 +2,10 @@
 
 import { ReactNode, createContext, useContext, useState } from 'react';
 
-interface SmallDeviceContextType {
+type SmallDeviceContextType = {
     showMenu: boolean;
     controledEnabledMenu: () => void;
-}
+};
 
 const SmallDeviceContext = createContext({} as SmallDeviceContextType);
 

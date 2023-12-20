@@ -27,7 +27,7 @@ export default function StoreLayout({ children }: { children: ReactNode }) {
                         <Image
                             className="w-6 h-6 md:ml-auto lg:mx-0"
                             src={iconCart}
-                            alt=""
+                            alt="Cart Icon"
                         />
                     </div>
                     <div className="h-1 bg-header border-b border-white border-opacity-10 md:w-9/10 md:mx-auto lg:w-4/5"></div>

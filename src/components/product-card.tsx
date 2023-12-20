@@ -24,7 +24,11 @@ export function ProductCard(props: Product) {
                     media="(min-width:768px)"
                     srcSet={props.tabletImageUrl}
                 />
-                <img className="w-full rounded-lg" src={props.mobileImageUrl} />
+                <img
+                    className="w-full rounded-lg"
+                    src={props.mobileImageUrl}
+                    alt={`Photo of ${props.name} product`}
+                />
             </picture>
 
             <div className="flex flex-col gap-6 md:w-[55%] md:justify-center lg:w-[45%]">
