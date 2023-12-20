@@ -21,6 +21,7 @@ export function About({ isfullSize }: AboutProps) {
                 <img
                     className="rounded-lg w-full"
                     src="/mobile/shared/image-best-gear.jpg"
+                    alt="Photo from a man using one headphone"
                 />
             </picture>
 

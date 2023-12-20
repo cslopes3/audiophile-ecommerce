@@ -19,14 +19,14 @@ export function HamburguerButtonMenu() {
                 <Image
                     className="w-5 h-4 lg:hidden"
                     src={iconX}
-                    alt=""
+                    alt="Close menu icon"
                     onClick={handleMenu}
                 />
             ) : (
                 <Image
                     className="w-5 h-4 lg:hidden"
                     src={iconHamburger}
-                    alt=""
+                    alt="Menu icon"
                     onClick={handleMenu}
                 />
             )}

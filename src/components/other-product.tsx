@@ -38,6 +38,7 @@ export function OtherProduct(props: OtherProductProps) {
                                 <img
                                     className="w-full rounded-lg"
                                     src={product.image.mobile}
+                                    alt={`Photo of ${product.name} product`}
                                 />
                             </picture>
                             <h3 className="text-h5 uppercase text-title mx-auto">

@@ -6,7 +6,11 @@ import logo from '@public/shared/svg/logo.svg';
 export function Logo() {
     return (
         <Link href="/">
-            <Image className="cursor-pointer w-36 h-6" src={logo} alt="" />
+            <Image
+                className="cursor-pointer w-36 h-6"
+                src={logo}
+                alt="Logo image"
+            />
         </Link>
     );
 }

@@ -16,7 +16,11 @@ export default function Home() {
                         media="(min-width:768px)"
                         srcSet="/tablet/home/hero.jpg"
                     />
-                    <img className="w-full" src="/mobile/home/hero.jpg" />
+                    <img
+                        className="w-full"
+                        src="/mobile/home/hero.jpg"
+                        alt="hero image from a new product"
+                    />
                 </picture>
 
                 <div className="absolute text-title-alt top-1/3 w-full lg:w-4/5 lg:flex lg:mx-auto">
@@ -53,6 +57,7 @@ export default function Home() {
                         <img
                             className="pt-14 w-40 md:w-44 lg:w-[22.5rem] lg:relative lg:-bottom-[4.250rem]"
                             src="/shared/no-background/image-speaker-zx9.png"
+                            alt="Speaker zx9 image"
                         />
                     </picture>
                     <CirclesPattern />
@@ -93,6 +98,7 @@ export default function Home() {
                         <img
                             className="rounded-lg"
                             src="/mobile/home/image-earphones-yx1.jpg"
+                            alt="Earphone yx1 image"
                         />
                     </picture>
 

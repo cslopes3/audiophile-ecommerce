@@ -47,7 +47,7 @@ export function CategoryList() {
                     >
                         <ProductImage
                             src={product.image}
-                            alt=""
+                            alt={`${product.variant} product image`}
                             quality={100}
                             variant={product.variant}
                         />
@@ -67,7 +67,7 @@ export function CategoryList() {
                                     className="pl-2"
                                     src={arrow}
                                     width={16}
-                                    alt=""
+                                    alt="Right arrow icon"
                                 />
                             </div>
                         </div>

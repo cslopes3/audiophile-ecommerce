@@ -32,6 +32,7 @@ export function Gallery(props: Gallery) {
                     <img
                         className="w-full rounded-lg"
                         src={props.firstImage.mobile}
+                        alt="Photo gallery"
                     />
                 </picture>
                 <picture>
@@ -46,6 +47,7 @@ export function Gallery(props: Gallery) {
                     <img
                         className="w-full rounded-lg"
                         src={props.secondImage.mobile}
+                        alt="Photo gallery"
                     />
                 </picture>
             </div>
@@ -61,6 +63,7 @@ export function Gallery(props: Gallery) {
                 <img
                     className="w-full rounded-lg"
                     src={props.thirdImage.mobile}
+                    alt="Photo gallery"
                 />
             </picture>
         </section>
