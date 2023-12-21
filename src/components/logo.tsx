@@ -7,7 +7,7 @@ export function Logo() {
     return (
         <Link href="/">
             <Image
-                className="cursor-pointer w-36 h-6"
+                className="mx-auto cursor-pointer w-36 h-6 md:mx-0"
                 src={logo}
                 alt="Logo image"
             />

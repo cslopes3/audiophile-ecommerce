@@ -2,8 +2,19 @@
 
 import { useState } from 'react';
 
-export function IncreaseDecreaseButton() {
+type IncreaseDecreaseButtonProps = {
+    variant?: 'small';
+};
+
+export function IncreaseDecreaseButton({
+    variant,
+}: IncreaseDecreaseButtonProps) {
     const [count, setCount] = useState(1);
+    let sizeClasses = 'h-12 w-[7.5rem]';
+
+    if (variant === 'small') {
+        sizeClasses = 'w-24 h-8';
+    }
 
     function handleDecrease() {
         setCount(count - 1);
@@ -14,7 +25,9 @@ export function IncreaseDecreaseButton() {
     }
 
     return (
-        <div className="flex items-center bg-neutral-default text-paragraph text-sub-title h-12 w-[7.5rem]">
+        <div
+            className={`flex items-center bg-neutral-default text-paragraph text-sub-title ${sizeClasses}`}
+        >
             <button
                 className="w-10 opacity-25 h-12 transition-all enabled:hover:text-emphasis enabled:hover:opacity-100"
                 onClick={handleDecrease}

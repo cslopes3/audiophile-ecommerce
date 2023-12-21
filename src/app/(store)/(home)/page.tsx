@@ -109,7 +109,7 @@ export default function Home() {
                             </h2>
                             <Button
                                 variant="outline"
-                                url="earphones/yx1-earphone"
+                                url="earphones/yx1-earphones"
                             >
                                 See Product
                             </Button>

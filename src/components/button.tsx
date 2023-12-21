@@ -7,7 +7,7 @@ import { manrope } from '@public/styles/fonts';
 import { tv, VariantProps } from 'tailwind-variants';
 
 const button = tv({
-    base: `${manrope.className} w-40 h-12 uppercase text-sub-title`,
+    base: `${manrope.className} h-12 uppercase text-sub-title`,
     variants: {
         variant: {
             primary:
@@ -16,10 +16,15 @@ const button = tv({
             outline:
                 'border-2 border-solid border-black transition-all hover:bg-black hover:text-title-alt',
         },
+        size: {
+            normal: 'w-40',
+            full: 'w-full',
+        },
     },
 
     defaultVariants: {
         variant: 'primary',
+        size: 'normal',
     },
 });
 
@@ -31,7 +36,7 @@ export type ButtonProps = ComponentProps<'button'> &
     VariantProps<typeof button> &
     ButtonType;
 
-export function Button({ variant, url, ...props }: ButtonProps) {
+export function Button({ variant, size, url, ...props }: ButtonProps) {
     const router = useRouter();
 
     return (
@@ -39,11 +44,11 @@ export function Button({ variant, url, ...props }: ButtonProps) {
             {url ? (
                 <button
                     {...props}
-                    className={button({ variant })}
+                    className={button({ variant, size })}
                     onClick={() => router.push(url)}
                 />
             ) : (
-                <button {...props} className={button({ variant })} />
+                <button {...props} className={button({ variant, size })} />
             )}
         </>
     );
