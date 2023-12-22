@@ -28,6 +28,7 @@ export default function ProductPage({ params }: ProductProps) {
             <GoBackLink />
             <section className="mt-6 lg:mt-14">
                 <ProductCard
+                    id={product.id}
                     name={product.name}
                     description={product.description}
                     newProduct={product.new}

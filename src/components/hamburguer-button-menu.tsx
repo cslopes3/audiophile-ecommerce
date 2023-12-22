@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import iconHamburger from '@public/shared/svg/icon-hamburger.svg';
 import iconX from '@public/shared/svg/icon-x.svg';
-import { useSmallDevicesMenu } from 'context/small-devices-menu-context';
+import { useSmallDevicesMenu } from 'contexts/small-devices-menu-context';
 
 export function HamburguerButtonMenu() {
     const { showMenu, controledEnabledMenu } = useSmallDevicesMenu();

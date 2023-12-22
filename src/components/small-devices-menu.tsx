@@ -2,7 +2,7 @@
 
 import { ReactNode } from 'react';
 
-import { useSmallDevicesMenu } from 'context/small-devices-menu-context';
+import { useSmallDevicesMenu } from 'contexts/small-devices-menu-context';
 
 export function SmallDevicesMenu({ children }: { children: ReactNode }) {
     const { showMenu, controledEnabledMenu } = useSmallDevicesMenu();

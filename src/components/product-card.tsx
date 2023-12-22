@@ -1,8 +1,7 @@
-import { Button } from 'components/button';
-
-import { IncreaseDecreaseButton } from './increase-decrease-button';
+import { ProductControls } from './product-controls';
 
 interface Product {
+    id: string;
     name: string;
     description: string;
     newProduct: boolean;
@@ -49,10 +48,12 @@ export function ProductCard(props: Product) {
                         maximumFractionDigits: 0,
                     })}
                 </h6>
-                <div className="flex gap-4 text-title-alt">
-                    <IncreaseDecreaseButton />
-                    <Button>Add to Cart</Button>
-                </div>
+
+                <ProductControls
+                    id={props.id}
+                    name={props.name}
+                    price={props.price}
+                />
             </div>
         </div>
     );
