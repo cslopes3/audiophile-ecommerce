@@ -9,6 +9,7 @@ interface Product {
     tabletImageUrl: string;
     desktopImageUrl: string;
     price: number;
+    imageUrl: string;
 }
 
 export function ProductCard(props: Product) {
@@ -53,6 +54,7 @@ export function ProductCard(props: Product) {
                     id={props.id}
                     name={props.name}
                     price={props.price}
+                    imageUrl={props.imageUrl}
                 />
             </div>
         </div>

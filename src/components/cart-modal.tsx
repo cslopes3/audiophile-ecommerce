@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import { Button } from './button';
 import { CartControl } from './cart-control';
+import { CartItem } from './cart-item';
 import { Modal } from './modal';
 
 import iconCart from '@public/shared/svg/icon-cart.svg';
@@ -35,41 +36,18 @@ export function CartModal() {
                                     Remove all
                                 </span>
                             </div>
-                            <section className="flex flex-col gap-6 mt-6 max-h-60 overflow-scroll">
+                            <section className="flex flex-col gap-6 mt-6 max-h-60">
                                 {cartItems.map((cartItem) => {
                                     return (
-                                        <article
+                                        <CartItem
                                             key={cartItem.product.id}
-                                            className="flex gap-4 items-center"
+                                            cartItem={cartItem}
                                         >
-                                            <Image
-                                                className="rounded-lg"
-                                                src="/shared/cart/image-zx9-speaker.jpg"
-                                                alt=""
-                                                width={64}
-                                                height={64}
-                                            />
-                                            <div className="flex-grow">
-                                                <p className="text-h3-mobile text-paragraph">
-                                                    {cartItem.product.name}
-                                                </p>
-                                                <p className="text-body text-paragraph opacity-50">
-                                                    {cartItem.product.price.toLocaleString(
-                                                        'en-US',
-                                                        {
-                                                            style: 'currency',
-                                                            currency: 'USD',
-                                                            minimumFractionDigits: 0,
-                                                            maximumFractionDigits: 0,
-                                                        },
-                                                    )}
-                                                </p>
-                                            </div>
                                             <CartControl
                                                 cartItem={cartItem.product}
                                                 amount={cartItem.amount}
                                             />
-                                        </article>
+                                        </CartItem>
                                     );
                                 })}
                             </section>
@@ -94,7 +72,9 @@ export function CartModal() {
                             </h6>
                         </div>
                         <div className="w-9/10 text-title-alt mt-6 mx-auto">
-                            <Button size="full">Checkout</Button>
+                            <Button url="/checkout" size="full">
+                                Checkout
+                            </Button>
                         </div>
                     </>
                 )}

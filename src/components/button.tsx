@@ -32,7 +32,7 @@ type ButtonType = {
     url?: string;
 };
 
-export type ButtonProps = ComponentProps<'button'> &
+type ButtonProps = ComponentProps<'button'> &
     VariantProps<typeof button> &
     ButtonType;
 

@@ -13,6 +13,7 @@ export interface ProductDataInterface {
         tablet: string;
         desktop: string;
     };
+    cartImage: string;
     new: boolean;
     price: number;
     description: string;

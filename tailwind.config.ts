@@ -88,6 +88,20 @@ const config: Config = {
                     fontWeight: '700',
                 },
             ],
+            'form-label': [
+                '0.75rem',
+                {
+                    letterSpacing: '-0.0133rem',
+                    fontWeight: '700',
+                },
+            ],
+            'form-input': [
+                '0.875rem',
+                {
+                    letterSpacing: '-0.015625rem',
+                    fontWeight: '700',
+                },
+            ],
         },
         extend: {
             backgroundImage: {
@@ -95,6 +109,8 @@ const config: Config = {
                 speaker: "url('/mobile/home/image-speaker-zx7.jpg')",
                 'speaker-tablet': "url('/tablet/home/image-speaker-zx7.jpg')",
                 'speaker-desktop': "url('/desktop/home/image-speaker-zx7.jpg')",
+                'gradient-orange-radial':
+                    'radial-gradient(#D87D4A 40%, white 0%)',
             },
             backgroundColor: {
                 default: '#FAFAFA',
@@ -107,6 +123,10 @@ const config: Config = {
                 'neutral-hover': '#4C4C4C',
                 'neutral-default': '#F1F1F1',
                 'neutral-alt': '#FAFAFA',
+            },
+            gridTemplateColumns: {
+                '2/1': '2fr 1fr',
+                auto: 'auto 1fr',
             },
             maxWidth: {
                 desktop: '1440px',

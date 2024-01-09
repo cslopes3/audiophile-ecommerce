@@ -11,6 +11,7 @@ type ProductControlsType = {
     id: string;
     name: string;
     price: number;
+    imageUrl: string;
 };
 
 export function ProductControls(props: ProductControlsType) {
@@ -31,6 +32,7 @@ export function ProductControls(props: ProductControlsType) {
                 id: props.id,
                 name: props.name,
                 price: props.price,
+                imageUrl: props.imageUrl,
             },
             amount: count,
         });

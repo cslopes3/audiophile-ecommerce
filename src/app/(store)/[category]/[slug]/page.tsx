@@ -28,7 +28,7 @@ export default function ProductPage({ params }: ProductProps) {
             <GoBackLink />
             <section className="mt-6 lg:mt-14">
                 <ProductCard
-                    id={product.id}
+                    id={product.id.toString()}
                     name={product.name}
                     description={product.description}
                     newProduct={product.new}
@@ -36,6 +36,7 @@ export default function ProductPage({ params }: ProductProps) {
                     tabletImageUrl={product.image.tablet}
                     desktopImageUrl={product.image.desktop}
                     price={product.price}
+                    imageUrl={product.cartImage}
                 />
             </section>
             <section className="w-9/10 flex flex-col my-20 gap-20 md:gap-28 md:mb-36 lg:mt-40 lg:flex-row lg:gap-0 lg:justify-between">

@@ -6,6 +6,7 @@ type ProductType = {
     id: string;
     name: string;
     price: number;
+    imageUrl: string;
 };
 
 type CartItemsType = {
@@ -39,6 +40,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
                 ),
             );
         } else {
+            product.name = product.name.replace(
+                /Headphones|Earphones|Speaker/g,
+                '',
+            );
             setCartItems([...cartItems, { product, amount }]);
         }
     }
