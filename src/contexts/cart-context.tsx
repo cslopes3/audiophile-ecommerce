@@ -5,6 +5,7 @@ import {
     createContext,
     useContext,
     useEffect,
+    useRef,
     useState,
 } from 'react';
 
@@ -29,22 +30,20 @@ type CartContextType = {
 
 const CartContext = createContext({} as CartContextType);
 
-const storageCartItems = (): CartItemsType[] | [] => {
-    if (typeof window !== 'undefined') {
-        const storageItems = localStorage.getItem('cartItems');
-
-        if (storageItems) {
-            return JSON.parse(storageItems);
-        }
-    }
-
-    return [];
-};
-
 export function CartProvider({ children }: { children: ReactNode }) {
-    const [cartItems, setCartItems] = useState<CartItemsType[] | []>(
-        storageCartItems,
-    );
+    const initialLoadComplete = useRef(false);
+    const [cartItems, setCartItems] = useState<CartItemsType[]>([]);
+
+    useEffect(() => {
+        if (!initialLoadComplete.current) {
+            const storageItems = localStorage.getItem('cartItems');
+            console.log(storageItems);
+            if (storageItems) {
+                setCartItems(JSON.parse(storageItems!));
+            }
+            initialLoadComplete.current = true;
+        }
+    }, []);
 
     useEffect(() => {
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
