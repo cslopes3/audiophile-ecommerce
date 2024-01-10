@@ -43,7 +43,6 @@ export function CategoryProductCard(props: Product) {
                         New Product
                     </h3>
                 )}
-                {/* TODO Force two lines */}
                 <h2 className="text-h4 w-80 uppercase text-title mx-auto md:text-h2 lg:mx-0">
                     {props.name}
                 </h2>

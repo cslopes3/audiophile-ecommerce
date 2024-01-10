@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation';
+
 import { About } from 'components/about';
 import { CategoryList } from 'components/category-list';
 import { Gallery } from 'components/gallery';
@@ -18,9 +20,8 @@ export default function ProductPage({ params }: ProductProps) {
     const slug = params.slug;
     const product = getProductBySlug(slug);
 
-    //TODO
     if (!product || product.category != params.category) {
-        return <h1>Error</h1>;
+        notFound();
     }
 
     return (

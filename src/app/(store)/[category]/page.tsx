@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation';
+
 import { About } from 'components/about';
 import { CategoryList } from 'components/category-list';
 import { CategoryProductCard } from 'components/category-product-card';
@@ -14,9 +16,8 @@ export default function Category({ params }: CategoryProps) {
     const categoryName = params.category;
     const products = getProductFromCategory(categoryName);
 
-    //TODO
     if (products.length === 0) {
-        return <h1>Error</h1>;
+        notFound();
     }
 
     return (
