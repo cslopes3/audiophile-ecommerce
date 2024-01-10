@@ -74,8 +74,11 @@ export function CheckoutForm() {
         <form
             id="checkout"
             onSubmit={handleSubmit(onSubmit)}
-            className="bg-white p-6 rounded-lg sm:px-7 lg:px-12"
+            className="bg-white p-6 rounded-lg sm:px-7 lg:px-12 lg:pt-12"
         >
+            <legend className="text-h4 uppercase sm:text-h3 pb-6 sm:pb-10">
+                Checkout
+            </legend>
             <legend className="text-sub-title uppercase text-emphasis mb-4">
                 Billing Details
             </legend>
