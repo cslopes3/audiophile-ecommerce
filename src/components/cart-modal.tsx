@@ -90,10 +90,12 @@ export function CartModal() {
                     )}
 
                     {!cartHasItems && (
-                        //TODO
-                        <>
-                            <h1>No items</h1>
-                        </>
+                        <div className="w-2/4 mx-auto h-full flex flex-col justify-center items-center gap-6">
+                            <p className="text-h6">Your cart is empty</p>
+                            <Modal.Close className="w-full text-white">
+                                <Button size="full">Continue shopping</Button>
+                            </Modal.Close>
+                        </div>
                     )}
                 </Modal.Content>
             </Modal>
