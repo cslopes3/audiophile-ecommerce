@@ -125,6 +125,7 @@ const config: Config = {
                 'neutral-alt': '#FAFAFA',
             },
             gridTemplateColumns: {
+                '40/60': '40% 60%',
                 '2/1': '2fr 1fr',
                 auto: 'auto 1fr',
             },
