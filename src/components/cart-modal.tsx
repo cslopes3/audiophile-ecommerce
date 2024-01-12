@@ -14,6 +14,9 @@ export function CartModal() {
     const { cartItems, removeAll } = useCart();
 
     const cartHasItems = cartItems.length > 0;
+    const totalItems = cartItems.reduce((total, cartItem) => {
+        return (total += cartItem.amount);
+    }, 0);
 
     return (
         <>
@@ -23,9 +26,7 @@ export function CartModal() {
                     {cartHasItems && (
                         <div className="relative -top-full left-2/4 flex justify-center items-center w-4 h-4 bg-primary-default rounded-full">
                             <span className="text-white text-sub-title">
-                                {cartItems.reduce((total, cartItem) => {
-                                    return (total += cartItem.amount);
-                                }, 0)}
+                                {totalItems}
                             </span>
                         </div>
                     )}
@@ -37,7 +38,7 @@ export function CartModal() {
                             <div className="w-9/10 mx-auto">
                                 <div className="flex justify-between mb-2 items-center">
                                     <h6 className="text-h6 text-title uppercase">
-                                        Cart ({cartItems.length})
+                                        Cart ({totalItems})
                                     </h6>
                                     <span
                                         className="text-body text-title underline opacity-50"
@@ -81,11 +82,11 @@ export function CartModal() {
                                         })}
                                 </h6>
                             </div>
-                            <div className="w-9/10 text-title-alt mt-6 mx-auto">
+                            <Modal.Close className="w-9/10 text-title-alt mt-6 mx-auto">
                                 <Button url="/checkout" size="full">
                                     Checkout
                                 </Button>
-                            </div>
+                            </Modal.Close>
                         </>
                     )}
 

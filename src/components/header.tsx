@@ -20,7 +20,7 @@ export function Header() {
             </div>
             <div className="h-1 bg-header border-b border-white border-opacity-10 md:w-9/10 md:mx-auto lg:w-4/5"></div>
             <SmallDevicesMenu>
-                <CategoryList />
+                <CategoryList hasToCloseMenu={true} />
             </SmallDevicesMenu>
         </header>
     );

@@ -110,11 +110,11 @@ export function CheckoutModal({ open, onOpenChange }: CheckoutModalProps) {
                             </div>
                         </div>
 
-                        <div className="text-title-alt mt-6 sm:mt-11">
+                        <Modal.Close className="w-full text-title-alt mt-6 sm:mt-11">
                             <Button url="/" size="full">
                                 Back to home
                             </Button>
-                        </div>
+                        </Modal.Close>
                     </section>
                 </Modal.Content>
             </Modal>

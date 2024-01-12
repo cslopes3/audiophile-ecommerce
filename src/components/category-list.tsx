@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
+import { CloseSmallDeviceMenuLink } from './close-small-device-menu-link';
 import { ProductImage } from './produt-image';
 
 import earphoneImage from '@public/shared/no-background/earphones-no-background.png';
@@ -8,14 +9,18 @@ import headphoneImage from '@public/shared/no-background/headphones-no-backgroun
 import speakersImage from '@public/shared/no-background/speakers-no-background.png';
 import arrow from '@public/shared/svg/icon-arrow-right.svg';
 
-interface CategoryType {
+type CategoryType = {
     id: string;
     name: string;
     image: StaticImageData;
     variant: 'headphone' | 'speaker' | 'earphone';
-}
+};
 
-export function CategoryList() {
+type CategoryListProps = {
+    hasToCloseMenu?: boolean;
+};
+
+export function CategoryList({ hasToCloseMenu }: CategoryListProps) {
     const products: CategoryType[] = [
         {
             id: '1',
@@ -56,13 +61,19 @@ export function CategoryList() {
                                 {product.name}
                             </h6>
                             <div className="flex items-center pt-4">
-                                <Link
-                                    className="uppercase text-sub-title text-title opacity-50 transition-all hover:text-emphasis hover:opacity-100"
-                                    href={`/${product.name.toLowerCase()}`}
-                                    replace
-                                >
-                                    Shop
-                                </Link>
+                                {!hasToCloseMenu ? (
+                                    <Link
+                                        className="uppercase text-sub-title text-title opacity-50 transition-all hover:text-emphasis hover:opacity-100"
+                                        href={`/${product.name.toLowerCase()}`}
+                                        replace
+                                    >
+                                        Shop
+                                    </Link>
+                                ) : (
+                                    <CloseSmallDeviceMenuLink
+                                        productName={product.name}
+                                    />
+                                )}
                                 <Image
                                     className="pl-2"
                                     src={arrow}
