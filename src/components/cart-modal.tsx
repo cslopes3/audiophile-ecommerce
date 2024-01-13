@@ -9,7 +9,6 @@ import { Modal } from './modal';
 
 import iconCart from '@public/shared/svg/icon-cart.svg';
 import { useCart } from 'contexts/cart-context';
-import Link from 'next/link';
 
 export function CartModal() {
     const { cartItems, removeAll } = useCart();
@@ -42,7 +41,7 @@ export function CartModal() {
                                         Cart ({totalItems})
                                     </h6>
                                     <span
-                                        className="text-body text-title underline opacity-50"
+                                        className="text-body text-title underline opacity-50 cursor-pointer hover:text-emphasis"
                                         onClick={removeAll}
                                     >
                                         Remove all
@@ -83,10 +82,12 @@ export function CartModal() {
                                         })}
                                 </h6>
                             </div>
-                            <Modal.Close className="w-9/10 mx-auto text-title-alt mt-6 h-12 uppercase text-sub-title block bg-primary-default transition-all sm:mt-11 hover:bg-primary-hover">
-                                <Link className="w-full" href="/checkout">
-                                    Checkout
-                                </Link>
+                            <Modal.Close asChild>
+                                <div className="w-9/10 text-title-alt mt-6 mx-auto">
+                                    <Button url="/checkout" size="full">
+                                        Checkout
+                                    </Button>
+                                </div>
                             </Modal.Close>
                         </>
                     )}
@@ -94,9 +95,12 @@ export function CartModal() {
                     {!cartHasItems && (
                         <div className="w-2/4 mx-auto h-full flex flex-col justify-center items-center gap-6">
                             <p className="text-h6">Your cart is empty</p>
-
-                            <Modal.Close className="w-full text-title-alt mt-6 h-12 uppercase text-sub-title block bg-primary-default transition-all sm:mt-11 hover:bg-primary-hover">
-                                Continue shopping
+                            <Modal.Close asChild>
+                                <div className="w-full text-white">
+                                    <Button size="full">
+                                        Continue shopping
+                                    </Button>
+                                </div>
                             </Modal.Close>
                         </div>
                     )}

@@ -1,9 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
+import { Button } from 'components/button';
 import { CartItem } from 'components/cart-item';
 import { Modal } from 'components/modal';
 
@@ -110,10 +110,12 @@ export function CheckoutModal({ open, onOpenChange }: CheckoutModalProps) {
                             </div>
                         </div>
 
-                        <Modal.Close className="w-full text-title-alt mt-6 h-12 uppercase text-sub-title block bg-primary-default transition-all sm:mt-11 hover:bg-primary-hover">
-                            <Link className="w-full" href="/">
-                                Teste
-                            </Link>
+                        <Modal.Close asChild>
+                            <div className="w-full text-title-alt mt-6 sm:mt-11">
+                                <Button url="/" size="full">
+                                    Back to home
+                                </Button>
+                            </div>
                         </Modal.Close>
                     </section>
                 </Modal.Content>
