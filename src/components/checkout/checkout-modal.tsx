@@ -57,21 +57,22 @@ export function CheckoutModal({ open, onOpenChange }: CheckoutModalProps) {
 
                         <div className="grid md:grid-cols-2/1">
                             <div className="bg-neutral-default rounded-t-lg p-6 md:rounded-tr-none md:rounded-bl-lg">
-                                {modalCartItems.current
-                                    .slice(0, itemsToShow)
-                                    .map((cartItem) => {
-                                        return (
-                                            <CartItem
-                                                key={cartItem.product.id}
-                                                cartItem={cartItem}
-                                            >
-                                                <p className="text-h3-mobile text-paragraph opacity-50 self-start pt-2">
-                                                    x{cartItem.amount}
-                                                </p>
-                                            </CartItem>
-                                        );
-                                    })}
-
+                                <div className="max-h-32 overflow-y-auto md:max-h-none">
+                                    {modalCartItems.current
+                                        .slice(0, itemsToShow)
+                                        .map((cartItem) => {
+                                            return (
+                                                <CartItem
+                                                    key={cartItem.product.id}
+                                                    cartItem={cartItem}
+                                                >
+                                                    <p className="text-h3-mobile text-paragraph opacity-50 self-start pt-2">
+                                                        x{cartItem.amount}
+                                                    </p>
+                                                </CartItem>
+                                            );
+                                        })}
+                                </div>
                                 {!hasOnlyOneItem && (
                                     <>
                                         <hr className="my-3" />
